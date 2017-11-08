@@ -6,4 +6,5 @@ RUN wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | apt-key
 	apt-get -y install google-chrome-stable vim && \
 	apt-get clean && \
 	rm -rf /var/cache/apt
-ENV PATH "$PATH:/opt/google/chrome"
+ENV CHROME_BIN=/usr/bin/google-chrome
+#ENV PATH "$PATH:/opt/google/chrome"
