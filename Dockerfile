@@ -23,4 +23,3 @@ ENV GOSU_CHOWN /home/node
 COPY gosu-entrypoint.sh /
 RUN chmod +x /gosu-entrypoint.sh
 ENTRYPOINT ["/gosu-entrypoint.sh"]
-#USER node

@@ -21,5 +21,4 @@ if [ "$GOSU_USER" != "0:0" ]; then
     groupmod -g "${uidgid[1]}" node || true
     usermod -u "${uidgid[0]}" -g "${uidgid[1]}" node
 fi
-su - node
 exec "$@"
