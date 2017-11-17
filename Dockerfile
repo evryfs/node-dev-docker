@@ -13,12 +13,10 @@ RUN arch="$(dpkg --print-architecture | awk -F- '{ print $NF }')" && \
 
 ENV CHROME_BIN=/usr/bin/google-chrome
 ENV NPM_CONFIG_PREFIX=/home/node/.npm-global
-#ENV PATH "$PATH:/opt/google/chrome"
 
 # Specify any standard chown format (uid, uid:gid), default to root:root
 ENV GOSU_USER 0:0
 # Specify any space delimited directories that should be chowned to GOSU_USER
-#ENV GOSU_CHOWN /tmp
 ENV GOSU_CHOWN /home/node
 COPY gosu-entrypoint.sh /
 RUN chmod +x /gosu-entrypoint.sh
