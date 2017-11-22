@@ -11,6 +11,8 @@ RUN arch="$(dpkg --print-architecture | awk -F- '{ print $NF }')" && \
 	wget -O /usr/local/bin/gosu "https://github.com/tianon/gosu/releases/download/1.10/gosu-$arch" && \
 	chmod a+x /usr/local/bin/gosu
 
+RUN wget -q -O - "https://download.mozilla.org/?product=firefox-latest-ssl&os=linux64" |tar xjv -C /opt
+
 ENV CHROME_BIN=/usr/bin/google-chrome
 ENV NPM_CONFIG_PREFIX=/home/node/.npm-global
 
