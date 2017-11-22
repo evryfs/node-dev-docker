@@ -15,6 +15,7 @@ RUN wget -q -O - "https://download.mozilla.org/?product=firefox-latest-ssl&os=li
 
 ENV CHROME_BIN=/usr/bin/google-chrome
 ENV NPM_CONFIG_PREFIX=/home/node/.npm-global
+ENV PATH=/opt/firefox:${PATH}
 
 # Specify any standard chown format (uid, uid:gid), default to root:root
 ENV GOSU_USER 0:0
