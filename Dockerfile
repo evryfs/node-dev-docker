@@ -29,7 +29,7 @@ ENV PROXY=http://proxy.evry.com:8080 \
 	NPM_REGISTRY=https://fsnexus.evry.com/nexus/repository/npm-all/ \
 	CHROME_BIN=/usr/bin/google-chrome \
 	NPM_CONFIG_PREFIX=/home/node/.npm-global \
-	PATH=/opt/firefox:${PATH}
+	PATH=/opt/firefox:${PATH} \
 	GOSU_USER=0:0 \
 	GOSU_CHOWN=/home/node
 
