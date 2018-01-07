@@ -14,12 +14,10 @@ RUN arch="$(dpkg --print-architecture | awk -F- '{ print $NF }')" && \
 RUN wget -q -O - "https://download.mozilla.org/?product=firefox-latest-ssl&os=linux64" |tar xjv -C /opt
 
 RUN yarn global add @angular/cli sonarqube-scanner@latest retire && \
-	ng set --global packageManager=yarn && \
-	which ng && \
-	ng version && \
-	npm version && \
-	yarn --version && \
-	yarn config list
+	ng set --global packageManager=yarn
+
+COPY showversions.sh /
+RUN /showversions.sh
 
 ENV PROXY=http://proxy.evry.com:8080 \
 	proxy=http://proxy.evry.com:8080 \
