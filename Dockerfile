@@ -21,14 +21,21 @@ RUN yarn global add @angular/cli sonarqube-scanner@latest retire && \
 	yarn --version && \
 	yarn config list
 
-ENV CHROME_BIN=/usr/bin/google-chrome
-ENV NPM_CONFIG_PREFIX=/home/node/.npm-global
-ENV PATH=/opt/firefox:${PATH}
+ENV PROXY=http://proxy.evry.com:8080 \
+	proxy=http://proxy.evry.com:8080 \
+	HTTPS_PROXY=http://proxy.evry.com:8080 \
+	https_proxy=http://proxy.evry.com:8080 \
+	NO_PROXY=localhost,.evry.com,.finods.com,.localdomain,.cosng.net \
+	NPM_REGISTRY=https://fsnexus.evry.com/nexus/repository/npm-all/ \
+	CHROME_BIN=/usr/bin/google-chrome \
+	NPM_CONFIG_PREFIX=/home/node/.npm-global \
+	PATH=/opt/firefox:${PATH}
+	GOSU_USER=0:0 \
+	GOSU_CHOWN=/home/node
 
-# Specify any standard chown format (uid, uid:gid), default to root:root
-ENV GOSU_USER 0:0
-# Specify any space delimited directories that should be chowned to GOSU_USER
-ENV GOSU_CHOWN /home/node
+RUN	npm set registry ${NPM_REGISTRY} && \
+	yarn config set registry ${NPM_REGISTRY}
+
 COPY gosu-entrypoint.sh /
 RUN chmod +x /gosu-entrypoint.sh
 ENTRYPOINT ["/gosu-entrypoint.sh"]
