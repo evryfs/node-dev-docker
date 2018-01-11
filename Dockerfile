@@ -1,4 +1,4 @@
-FROM node:9-stretch
+FROM node:9.4.0-stretch
 LABEL maintainer "David J. M. Karlsen <david@davidkarlsen.com>"
 RUN wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | apt-key add - && \
 	sh -c 'echo "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google.list' && \
@@ -17,7 +17,7 @@ RUN yarn global add @angular/cli sonarqube-scanner@latest retire && \
 	ng set --global packageManager=yarn
 
 COPY showversions.sh /
-RUN /showversions.sh
+RUN /showversions.sh
 
 ENV PROXY=http://proxy.evry.com:8080 \
 	proxy=http://proxy.evry.com:8080 \

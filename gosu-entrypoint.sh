@@ -22,6 +22,8 @@ if [ "$GOSU_USER" != "0:0" ]; then
     usermod -u "${uidgid[0]}" -g "${uidgid[1]}" node
 fi
 
+[ -n "$SHOW_VERSIONS" ] && /showversions.sh
+
 #exec "$@"
 
 cd /app;su - node -m -l -c "$@"
