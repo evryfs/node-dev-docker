@@ -5,15 +5,12 @@ RUN wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | apt-key
 	apt-get update && \
 	apt-get -y install google-chrome-stable vim less psmisc && \
 	apt-get clean && \
-	rm -rf /var/cache/apt
-
-RUN arch="$(dpkg --print-architecture | awk -F- '{ print $NF }')" && \
+	rm -rf /var/cache/apt && \
+	arch="$(dpkg --print-architecture | awk -F- '{ print $NF }')" && \
 	wget -O /usr/local/bin/gosu "https://github.com/tianon/gosu/releases/download/1.10/gosu-$arch" && \
-	chmod a+x /usr/local/bin/gosu
-
-RUN wget -q -O - "https://download.mozilla.org/?product=firefox-latest-ssl&os=linux64" |tar xjv -C /opt
-
-RUN yarn global add @angular/cli sonarqube-scanner@latest retire && \
+	chmod a+x /usr/local/bin/gosu && \
+	wget -q -O - "https://download.mozilla.org/?product=firefox-latest-ssl&os=linux64" |tar xjv -C /opt && \
+	yarn global add @angular/cli sonarqube-scanner@latest retire && \
 	ng set --global packageManager=yarn
 
 COPY showversions.sh /
