@@ -13,6 +13,7 @@ RUN wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | apt-key
 	yarn global add @angular/cli sonarqube-scanner@latest retire stylelint && \
 	ng set --global packageManager=yarn && \
 	wget https://sonarsource.bintray.com/Distribution/sonar-scanner-cli/sonar-scanner-cli-3.0.3.778-linux.zip -O /tmp/sonar.zip && \
+	mkdir -p /home/node/.sonar/native-sonar-scanner && \
 	unzip /tmp/sonar.zip -d /home/node/.sonar/native-sonar-scanner && \
 	rm /tmp/sonar.zip
 
