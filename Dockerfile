@@ -10,7 +10,7 @@ RUN wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | apt-key
 	wget -O /usr/local/bin/gosu "https://github.com/tianon/gosu/releases/download/1.10/gosu-$arch" && \
 	chmod a+x /usr/local/bin/gosu && \
 	wget -q -O - "https://download.mozilla.org/?product=firefox-latest-ssl&os=linux64" |tar xjv -C /opt && \
-	yarn global add @angular/cli sonarqube-scanner@latest retire stylelint && \
+	yarn global add @angular/cli@1.6.6 sonarqube-scanner@latest retire stylelint && \
 	ng set --global packageManager=yarn && \
 	wget https://sonarsource.bintray.com/Distribution/sonar-scanner-cli/sonar-scanner-cli-3.0.3.778-linux.zip -O /tmp/sonar.zip && \
 	mkdir -p /home/node/.sonar/native-sonar-scanner && \
