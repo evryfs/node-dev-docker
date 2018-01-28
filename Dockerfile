@@ -26,7 +26,8 @@ ENV PROXY=http://proxy.evry.com:8080 \
 	NPM_CONFIG_PREFIX=/home/node/.npm-global \
 	PATH=/opt/firefox:${PATH} \
 	GOSU_USER=0:0 \
-	GOSU_CHOWN=/home/node
+	GOSU_CHOWN=/home/node \
+	PUPPETEER_SKIP_CHROMIUM_DOWNLOAD=true
 
 RUN	npm set registry ${NPM_REGISTRY} && \
 	yarn config set registry ${NPM_REGISTRY}
