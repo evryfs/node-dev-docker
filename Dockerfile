@@ -15,7 +15,8 @@ RUN wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | apt-key
 	wget https://sonarsource.bintray.com/Distribution/sonar-scanner-cli/sonar-scanner-cli-3.0.3.778-linux.zip -O /tmp/sonar.zip && \
 	mkdir -p /home/node/.sonar/native-sonar-scanner && \
 	unzip /tmp/sonar.zip -d /home/node/.sonar/native-sonar-scanner && \
-	rm /tmp/sonar.zip
+	rm /tmp/sonar.zip && \
+	chown -R node:node /home/node
 
 COPY showversions.sh /
 RUN /showversions.sh
