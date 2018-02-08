@@ -1,5 +1,7 @@
 FROM node:9.4.0-stretch
 LABEL maintainer "David J. M. Karlsen <david@davidkarlsen.com>"
+ENV ANGULAR_CLI_VERSION=1.6.8
+
 RUN wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | apt-key add - && \
 	sh -c 'echo "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google.list' && \
 	apt-get update && \
@@ -10,7 +12,7 @@ RUN wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | apt-key
 	wget -O /usr/local/bin/gosu "https://github.com/tianon/gosu/releases/download/1.10/gosu-$arch" && \
 	chmod a+x /usr/local/bin/gosu && \
 	wget -q -O - "https://download.mozilla.org/?product=firefox-latest-ssl&os=linux64" |tar xjv -C /opt && \
-	yarn global add @angular/cli@1.6.7 sonarqube-scanner@latest retire stylelint && \
+	yarn global add @angular/cli@${ANGULAR_CLI_VERSION} sonarqube-scanner@latest retire stylelint && \
 	ng set --global packageManager=yarn && \
 	wget https://sonarsource.bintray.com/Distribution/sonar-scanner-cli/sonar-scanner-cli-3.0.3.778-linux.zip -O /tmp/sonar.zip && \
 	mkdir -p /home/node/.sonar/native-sonar-scanner && \
