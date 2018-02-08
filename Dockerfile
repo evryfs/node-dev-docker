@@ -1,4 +1,4 @@
-FROM node:9.4.0-stretch
+FROM node:9.5.0-stretch
 LABEL maintainer "David J. M. Karlsen <david@davidkarlsen.com>"
 ENV ANGULAR_CLI_VERSION=1.6.8
 
