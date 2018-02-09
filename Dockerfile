@@ -36,8 +36,8 @@ ENV PROXY=http://proxy.evry.com:8080 \
 	PUPPETEER_SKIP_CHROMIUM_DOWNLOAD=true
 
 RUN	npm set registry ${NPM_REGISTRY} && \
-	yarn config set registry ${NPM_REGISTRY} && \
-	chown -R node:node /home/node
+	yarn config set registry ${NPM_REGISTRY} 
+RUN	chown -R node:node /home/node
 
 COPY gosu-entrypoint.sh /
 RUN chmod +x /gosu-entrypoint.sh
