@@ -26,4 +26,4 @@ fi
 
 #exec "$@"
 
-cd /app && export HOME=/home/node && su - node -c "$@"
+export HOME=/home/node && su -l node -c "$@"
