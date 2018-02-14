@@ -1,6 +1,6 @@
 FROM node:9.5.0-stretch
 LABEL maintainer "David J. M. Karlsen <david@davidkarlsen.com>"
-ENV ANGULAR_CLI_VERSION=1.6.8 OWASP_DEPENDENCY_CHECK_VERSION=3.1.1
+ENV ANGULAR_CLI_VERSION=1.6.8 OWASP_DEPENDENCY_CHECK_VERSION=3.1.1 SONAR_CLI_VERSION=3.0.3.778
 
 RUN wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | apt-key add - && \
 	sh -c 'echo "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google.list' && \
@@ -17,7 +17,7 @@ RUN wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | apt-key
 	wget http://dl.bintray.com/jeremy-long/owasp/dependency-check-${OWASP_DEPENDENCY_CHECK_VERSION}-release.zip -O /tmp/owasp-dep-check.zip && \
 	unzip /tmp/owasp-dep-check.zip -d /usr/local && \
 	rm /tmp/owasp-dep-check.zip && \
-	wget https://sonarsource.bintray.com/Distribution/sonar-scanner-cli/sonar-scanner-cli-3.0.3.778-linux.zip -O /tmp/sonar.zip && \
+	wget https://sonarsource.bintray.com/Distribution/sonar-scanner-cli/sonar-scanner-cli-${SONAR_CLI_VERSION}-linux.zip -O /tmp/sonar.zip && \
 	mkdir -p /home/node/.sonar/native-sonar-scanner && \
 	unzip /tmp/sonar.zip -d /home/node/.sonar/native-sonar-scanner && \
 	rm /tmp/sonar.zip
@@ -36,7 +36,8 @@ ENV PROXY=http://proxy.evry.com:8080 \
 	PATH=/opt/firefox:/usr/local/dependency-check/bin:${PATH} \
 	GOSU_USER=0:0 \
 	GOSU_CHOWN=/home/node \
-	PUPPETEER_SKIP_CHROMIUM_DOWNLOAD=true
+	PUPPETEER_SKIP_CHROMIUM_DOWNLOAD=true \
+	JAVA_HOME=/home/node/.sonar/native-sonar-scanner/sonar-scanner-${SONAR_CLI_VERSION}-linux/jre
 
 RUN	npm set registry ${NPM_REGISTRY} && \
 	yarn config set registry ${NPM_REGISTRY} 
