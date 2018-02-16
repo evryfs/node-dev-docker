@@ -16,3 +16,7 @@ The source to build should be mounted in /app.
 Set GOSU_USER=<uid>:<gid> to the UID of the user running the image (typically Jenkins),
 this ensures that the "node" user will get this uid/gid, and chown node's home, /home/node
 which contains tooling - this again make files generated during the build to match the out-of-container ownership.
+
+
+[![](https://images.microbadger.com/badges/version/evryfs/node-dev-docker.svg)](https://microbadger.com/images/evryfs/node-dev-docker "Get your own version badge on microbadger.com")
+[![](https://images.microbadger.com/badges/image/evryfs/node-dev-docker.svg)](https://microbadger.com/images/evryfs/node-dev-docker "Get your own image badge on microbadger.com")
