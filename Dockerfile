@@ -39,12 +39,12 @@ ENV PROXY=http://proxy.evry.com:8080 \
 RUN	/usr/local/dependency-check/bin/dependency-check.sh --updateonly && \
 	npm set registry ${NPM_REGISTRY} && \
 	yarn config set registry ${NPM_REGISTRY} && \
-	chown -R node:node /home/node
+	chown -R node:node /home/node /usr/local/dependency-check/data && \
+	chmod -R a+w /usr/local/dependency-check/data
 
 COPY gosu-entrypoint.sh showversions.sh /
 #RUN chmod +x /gosu-entrypoint.sh && \
 #	/showversions.sh
-
 RUN chmod +x /gosu-entrypoint.sh
 
 ENTRYPOINT ["/gosu-entrypoint.sh"]
