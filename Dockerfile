@@ -5,7 +5,7 @@ ENV ANGULAR_CLI_VERSION=1.7.0 OWASP_DEPENDENCY_CHECK_VERSION=3.1.1 SONAR_CLI_VER
 RUN wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | apt-key add - && \
 	sh -c 'echo "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google.list' && \
 	apt-get update && \
-	apt-get -y install google-chrome-stable vim less psmisc unzip && \
+	apt-get -y install google-chrome-stable vim less psmisc unzip net-tools && \
 	apt-get clean && \
 	rm -rf /var/cache/apt && \
 	arch="$(dpkg --print-architecture | awk -F- '{ print $NF }')" && \
