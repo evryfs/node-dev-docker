@@ -8,4 +8,5 @@ ng version
 npm version
 yarn --version
 yarn config list
-
+dependency-check.sh --version
+sonar-scanner --version

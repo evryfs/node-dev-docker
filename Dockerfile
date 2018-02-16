@@ -22,9 +22,6 @@ RUN wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | apt-key
 	unzip /tmp/sonar.zip -d /home/node/.sonar/native-sonar-scanner && \
 	rm /tmp/sonar.zip
 
-COPY showversions.sh /
-RUN /showversions.sh
-
 ENV PROXY=http://proxy.evry.com:8080 \
 	proxy=http://proxy.evry.com:8080 \
 	HTTPS_PROXY=http://proxy.evry.com:8080 \
@@ -39,10 +36,15 @@ ENV PROXY=http://proxy.evry.com:8080 \
 	PUPPETEER_SKIP_CHROMIUM_DOWNLOAD=true \
 	JAVA_HOME=/home/node/.sonar/native-sonar-scanner/sonar-scanner-${SONAR_CLI_VERSION}-linux/jre
 
-RUN	npm set registry ${NPM_REGISTRY} && \
-	yarn config set registry ${NPM_REGISTRY} 
-RUN	chown -R node:node /home/node
+RUN	/usr/local/dependency-check/bin/dependency-check.sh --updateonly && \
+	npm set registry ${NPM_REGISTRY} && \
+	yarn config set registry ${NPM_REGISTRY} && \
+	chown -R node:node /home/node
 
-COPY gosu-entrypoint.sh /
+COPY gosu-entrypoint.sh showversions.sh /
+#RUN chmod +x /gosu-entrypoint.sh && \
+#	/showversions.sh
+
 RUN chmod +x /gosu-entrypoint.sh
+
 ENTRYPOINT ["/gosu-entrypoint.sh"]

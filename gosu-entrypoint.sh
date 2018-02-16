@@ -14,16 +14,19 @@ if [ -n "$GOSU_CHOWN" ]; then
     done
 fi  
 
+[ -n "$SHOW_VERSIONS" ] && /showversions.sh
+
 # If GOSU_USER environment variable set to something other than 0:0 (root:root),
 # become user:group set within and exec command passed in args
 if [ "$GOSU_USER" != "0:0" ]; then
     IFS=':' read -r -a uidgid <<< $GOSU_USER
     groupmod -g "${uidgid[1]}" node || true
     usermod -u "${uidgid[0]}" -g "${uidgid[1]}" node
+    
+    export HOME=/home/node USER=node
+    cd /app
+    exec gosu $GOSU_USER "$@"
 fi
 
-[ -n "$SHOW_VERSIONS" ] && /showversions.sh
-
-#exec "$@"
-
-export HOME=/home/node && su -m -l node -c "cd /app;$@"
+# If GOSU_USER was 0:0 exec command passed in args without gosu (assume already root)
+exec "$@"
