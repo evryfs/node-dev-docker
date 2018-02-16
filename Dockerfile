@@ -12,7 +12,7 @@ RUN wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | apt-key
 	wget -O /usr/local/bin/gosu "https://github.com/tianon/gosu/releases/download/1.10/gosu-$arch" && \
 	chmod a+x /usr/local/bin/gosu && \
 	wget -q -O - "https://download.mozilla.org/?product=firefox-latest-ssl&os=linux64" |tar xjv -C /opt && \
-	yarn global add @angular/cli@${ANGULAR_CLI_VERSION} sonarqube-scanner@latest retire stylelint && \
+	yarn global add @angular/cli@${ANGULAR_CLI_VERSION} sonarqube-scanner@latest stylelint && \
 	ng set --global packageManager=yarn && \
 	wget http://dl.bintray.com/jeremy-long/owasp/dependency-check-${OWASP_DEPENDENCY_CHECK_VERSION}-release.zip -O /tmp/owasp-dep-check.zip && \
 	unzip /tmp/owasp-dep-check.zip -d /usr/local && \
