@@ -20,3 +20,4 @@ which contains tooling - this again make files generated during the build to mat
 
 [![](https://images.microbadger.com/badges/version/evryfs/node-dev-docker.svg)](https://microbadger.com/images/evryfs/node-dev-docker "Get your own version badge on microbadger.com")
 [![](https://images.microbadger.com/badges/image/evryfs/node-dev-docker.svg)](https://microbadger.com/images/evryfs/node-dev-docker "Get your own image badge on microbadger.com")
+[![Anchore Image Overview](https://anchore.io/service/badges/image/aa6ee523229932a386cfb103d4fdd2e4c5d132fab33b70f373509838d7558753)](https://anchore.io/image/dockerhub/aa6ee523229932a386cfb103d4fdd2e4c5d132fab33b70f373509838d7558753?repo=evryfs%2Fnode-dev-docker&tag=master)
