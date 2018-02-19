@@ -30,9 +30,9 @@ ENV PROXY=http://proxy.evry.com:8080 \
 	NPM_REGISTRY=https://fsnexus.evry.com/nexus/repository/npm-all/ \
 	CHROME_BIN=/usr/bin/google-chrome \
 	NPM_CONFIG_PREFIX=/home/node/.npm-global \
-	PATH=/opt/firefox:/usr/local/dependency-check/bin:${PATH} \
-	GOSU_USER=0:0 \
-	GOSU_CHOWN=/home/node \
+	PATH="/opt/firefox:/usr/local/dependency-check/bin:${PATH}" \
+	GOSU_USER="0:0" \
+	GOSU_CHOWN="/home/node /usr/local/dependency-check/data" \
 	PUPPETEER_SKIP_CHROMIUM_DOWNLOAD=true \
 	JAVA_HOME=/home/node/.sonar/native-sonar-scanner/sonar-scanner-${SONAR_CLI_VERSION}-linux/jre
 
