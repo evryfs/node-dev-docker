@@ -15,7 +15,7 @@ RUN wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | apt-key
 	wget -q -O - "https://download.mozilla.org/?product=firefox-latest-ssl&os=linux64" |tar xjv -C /opt && \
 	yarn global add @angular/cli@${ANGULAR_CLI_VERSION} sonarqube-scanner@latest stylelint && \
 	ng set --global packageManager=yarn && \
-	wget http://dl.bintray.com/jeremy-long/owasp/dependency-check-${OWASP_DEPENDENCY_CHECK_VERSION}-release.zip -O /tmp/owasp-dep-check.zip && \
+	wget https://dl.bintray.com/jeremy-long/owasp/dependency-check-${OWASP_DEPENDENCY_CHECK_VERSION}-release.zip -O /tmp/owasp-dep-check.zip && \
 	unzip /tmp/owasp-dep-check.zip -d /usr/local && \
 	rm /tmp/owasp-dep-check.zip && \
 	wget https://sonarsource.bintray.com/Distribution/sonar-scanner-cli/sonar-scanner-cli-${SONAR_CLI_VERSION}-linux.zip -O /tmp/sonar.zip && \
