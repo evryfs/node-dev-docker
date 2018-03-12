@@ -3,7 +3,7 @@ LABEL maintainer "David J. M. Karlsen <david@davidkarlsen.com>"
 ENV ANGULAR_CLI_VERSION=1.7.3 OWASP_DEPENDENCY_CHECK_VERSION=3.1.1 SONAR_CLI_VERSION=3.0.3.778
 
 RUN wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | apt-key add - && \
-	sh -c 'echo "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google.list' && \
+	sh -c 'echo "deb [arch=amd64] https://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google.list' && \
 	apt-get update && \
 	apt-get -y install google-chrome-stable vim less psmisc unzip net-tools libdbus-glib-1-2 && \
 	apt-get -y dist-upgrade && \
