@@ -1,6 +1,6 @@
 FROM node:9.11.1-stretch
 LABEL maintainer "David J. M. Karlsen <david@davidkarlsen.com>"
-ENV ANGULAR_CLI_VERSION=1.7.4 OWASP_DEPENDENCY_CHECK_VERSION=3.1.2 SONAR_CLI_VERSION=3.1.0.1141
+ENV ANGULAR_CLI_VERSION=1.7.4 OWASP_DEPENDENCY_CHECK_VERSION=3.1.2 SONAR_CLI_VERSION=3.1.0.1141 YARN_VERSION=1.6.0
 
 RUN wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | apt-key add - && \
 	apt-get update && apt-get -y install apt-transport-https && \
@@ -22,7 +22,10 @@ RUN wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | apt-key
 	wget https://sonarsource.bintray.com/Distribution/sonar-scanner-cli/sonar-scanner-cli-${SONAR_CLI_VERSION}-linux.zip -O /tmp/sonar.zip && \
 	mkdir -p /home/node/.sonar/native-sonar-scanner && \
 	unzip /tmp/sonar.zip -d /home/node/.sonar/native-sonar-scanner && \
-	rm /tmp/sonar.zip
+	rm /tmp/sonar.zip && \
+	wget https://yarnpkg.com/downloads/${YARN_VERSION}/yarn-v${YARN_VERSION}.tar.gz -O -|tar xzvf - -C /opt && \
+	ln -sf /opt/yarn-v${YARN_VERSION}/bin/yarn /usr/local/bin/yarn && \
+	ln -sf /opt/yarn-v${YARN_VERSION}/bin/yarnpkg /usr/local/bin/yarnpkg
 
 ENV PROXY=http://proxy.evry.com:8080 \
 	proxy=http://proxy.evry.com:8080 \
