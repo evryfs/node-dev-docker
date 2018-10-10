@@ -1,5 +1,11 @@
 # node-dev-docker
 
+## Tags
+
+* node8
+* node10
+* latest -> to whatever is latest node LTS, which is currently node10
+
 ## The image contains tooling for:
 * ng
 * [npm](https://www.npmjs.com/get-npm)
