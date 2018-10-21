@@ -1,6 +1,6 @@
 FROM node:10.12-stretch
 LABEL maintainer "David J. M. Karlsen <david@davidkarlsen.com>"
-ENV ANGULAR_CLI_VERSION=7.0.1 OWASP_DEPENDENCY_CHECK_VERSION=3.3.2 SONAR_CLI_VERSION=3.2.0.1227 YARN_VERSION=1.10.1
+ENV ANGULAR_CLI_VERSION=7.0.2 OWASP_DEPENDENCY_CHECK_VERSION=3.3.2 SONAR_CLI_VERSION=3.2.0.1227 YARN_VERSION=1.10.1
 
 RUN wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | apt-key add - && \
 	apt-get update && apt-get -y install apt-transport-https && \
