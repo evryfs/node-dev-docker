@@ -25,7 +25,9 @@ RUN wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | apt-key
 	rm /tmp/sonar.zip && \
 	wget https://yarnpkg.com/downloads/${YARN_VERSION}/yarn-v${YARN_VERSION}.tar.gz -O -|tar xzvf - -C /opt && \
 	ln -sf /opt/yarn-v${YARN_VERSION}/bin/yarn /usr/local/bin/yarn && \
-	ln -sf /opt/yarn-v${YARN_VERSION}/bin/yarnpkg /usr/local/bin/yarnpkg
+	ln -sf /opt/yarn-v${YARN_VERSION}/bin/yarnpkg /usr/local/bin/yarnpkg && \
+	git config --global user.name "Jenkins" && \
+	git config --global user.email "fsjenkins@evry.com"
 
 ENV PROXY=http://proxy.evry.com:8080 \
 	proxy=http://proxy.evry.com:8080 \
