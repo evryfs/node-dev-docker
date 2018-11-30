@@ -1,4 +1,4 @@
-FROM node:10.13-stretch
+FROM node:10.14-stretch
 LABEL maintainer "David J. M. Karlsen <david@davidkarlsen.com>"
 ENV ANGULAR_CLI_VERSION=7.1.0 OWASP_DEPENDENCY_CHECK_VERSION=4.0.0 SONAR_CLI_VERSION=3.2.0.1227 YARN_VERSION=1.12.3
 
