@@ -2,9 +2,9 @@
 
 ## Tags
 
-* node8
 * node10
 * latest -> to whatever is latest node LTS, which is currently node10
+* node8: discontinued - won't be updated
 
 ## The image contains tooling for:
 * ng
