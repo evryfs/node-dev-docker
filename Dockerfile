@@ -50,8 +50,6 @@ RUN	/usr/local/dependency-check/bin/dependency-check.sh --updateonly && \
 	chmod -R a+w /usr/local/dependency-check/data
 
 COPY gosu-entrypoint.sh showversions.sh /
-#RUN chmod +x /gosu-entrypoint.sh && \
-#	/showversions.sh
 RUN chmod +x /gosu-entrypoint.sh
 
 ENTRYPOINT ["/gosu-entrypoint.sh"]
