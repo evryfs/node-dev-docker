@@ -26,5 +26,5 @@ which contains tooling - this again make files generated during the build to mat
 
 [![](https://images.microbadger.com/badges/version/evryfs/node-dev-docker.svg)](https://microbadger.com/images/evryfs/node-dev-docker "Get your own version badge on microbadger.com")
 [![](https://images.microbadger.com/badges/image/evryfs/node-dev-docker.svg)](https://microbadger.com/images/evryfs/node-dev-docker "Get your own image badge on microbadger.com")
-[![Docker Automated build](https://img.shields.io/docker/automated/jrottenberg/ffmpeg.svg?style=plastic)](https://hub.docker.com/r/evryfs/node-dev-docker/)
-
+![Docker Build Status](https://img.shields.io/docker/build/evryfs/node-dev-docker.svg)
+![Docker Cloud Automated build](https://img.shields.io/docker/cloud/automated/evryfs/node-dev-docker.svg)
