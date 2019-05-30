@@ -1,18 +1,16 @@
 FROM node:10.15.3-stretch
 LABEL maintainer "David J. M. Karlsen <david@davidkarlsen.com>"
-ENV ANGULAR_CLI_VERSION=7.3.9 OWASP_DEPENDENCY_CHECK_VERSION=4.0.2 SONAR_CLI_VERSION=3.3.0.1492 YARN_VERSION=1.16.0
+ENV ANGULAR_CLI_VERSION=8.0.0 OWASP_DEPENDENCY_CHECK_VERSION=4.0.2 SONAR_CLI_VERSION=3.3.0.1492 YARN_VERSION=1.16.0
 
 RUN wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | apt-key add - && \
 	apt-get update && apt-get -y install apt-transport-https git && \
 	sh -c 'echo "deb [arch=amd64] https://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google.list' && \
 	apt-get update && \
-	apt-get -y install google-chrome-stable vim less psmisc zip unzip net-tools libdbus-glib-1-2 && \
+	apt-get -y install google-chrome-stable vim less psmisc zip unzip net-tools libdbus-glib-1-2 gosu && \
 	apt-get -y dist-upgrade && \
 	apt-get clean && \
 	rm -rf /var/cache/apt && \
 	arch="$(dpkg --print-architecture | awk -F- '{ print $NF }')" && \
-	wget -O /usr/local/bin/gosu "https://github.com/tianon/gosu/releases/download/1.10/gosu-$arch" && \
-	chmod a+x /usr/local/bin/gosu && \
 	wget -q -O - "https://download.mozilla.org/?product=firefox-latest-ssl&os=linux64" |tar xjv -C /opt && \
 	yarn global add @angular/cli@${ANGULAR_CLI_VERSION} sonarqube-scanner@latest stylelint && \
 	ng config --global cli.packageManager yarn && \
