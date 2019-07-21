@@ -26,8 +26,8 @@ RUN wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | apt-key
 	git config --global user.name "Jenkins" && \
 	git config --global user.email "fsjenkins@evry.com"
 
-ENV PROXY=http://proxy.evry.com:8080 \
-	proxy=http://proxy.evry.com:8080 \
+ENV 	HTTP_PROXY=http://proxy.evry.com:8080 \
+	http_proxy=http://proxy.evry.com:8080 \
 	HTTPS_PROXY=http://proxy.evry.com:8080 \
 	https_proxy=http://proxy.evry.com:8080 \
 	NO_PROXY=localhost,.evry.com,.finods.com,.localdomain,.cosng.net \
