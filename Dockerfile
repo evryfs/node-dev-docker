@@ -10,6 +10,7 @@ RUN wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | apt-key
 	apt-get -y dist-upgrade && \
 	apt-get clean && \
 	rm -rf /var/cache/apt && \
+	ln -s /opt/google/chrome/chrome /usr/local/bin/chrome && \
 	wget -q -O - "https://download.mozilla.org/?product=firefox-latest-ssl&os=linux64" |tar xjv -C /opt && \
 	ln -s /opt/firefox/firefox /usr/local/bin/firefox && \
 	yarn global add @angular/cli@${ANGULAR_CLI_VERSION} sonarqube-scanner@latest stylelint && \
