@@ -1,6 +1,6 @@
 FROM node:10.16.3-stretch
 LABEL maintainer "David J. M. Karlsen <david@davidkarlsen.com>"
-ENV ANGULAR_CLI_VERSION=8.3.5 OWASP_DEPENDENCY_CHECK_VERSION=5.2.2 SONAR_CLI_VERSION=4.2.0.1873 YARN_VERSION=1.19.0
+ENV ANGULAR_CLI_VERSION=8.3.7 OWASP_DEPENDENCY_CHECK_VERSION=5.2.2 SONAR_CLI_VERSION=4.2.0.1873 YARN_VERSION=1.19.0
 # latest is broken: https://github.com/karma-runner/karma-firefox-launcher/issues/104
 # ENV FFOX_DOWNLOAD_URL=https://download.mozilla.org/?product=firefox-latest-ssl&os=linux64
 ENV FFOX_DOWNLOAD_URL=https://ftp.mozilla.org/pub/firefox/releases/67.0.4/linux-x86_64/en-US/firefox-67.0.4.tar.bz2
