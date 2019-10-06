@@ -1,4 +1,4 @@
-FROM node:12.10.0-stretch
+FROM node:12.11.0-stretch
 LABEL maintainer "David J. M. Karlsen <david@davidkarlsen.com>"
 ENV ANGULAR_CLI_VERSION=8.3.7 OWASP_DEPENDENCY_CHECK_VERSION=5.2.2 SONAR_CLI_VERSION=4.2.0.1873 YARN_VERSION=1.19.0
 # latest is broken: https://github.com/karma-runner/karma-firefox-launcher/issues/104
