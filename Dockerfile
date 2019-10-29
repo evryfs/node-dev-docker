@@ -1,4 +1,4 @@
-FROM node:12.13.0-buster
+FROM node:12.13.0-buster-slim
 LABEL maintainer "David J. M. Karlsen <david@davidkarlsen.com>"
 ENV ANGULAR_CLI_VERSION=8.3.13 OWASP_DEPENDENCY_CHECK_VERSION=5.2.2 SONAR_CLI_VERSION=4.2.0.1873 YARN_VERSION=1.19.1
 # latest is broken: https://github.com/karma-runner/karma-firefox-launcher/issues/104
@@ -9,7 +9,7 @@ RUN wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | apt-key
 	apt-get update && apt-get -y install apt-transport-https git && \
 	sh -c 'echo "deb [arch=amd64] https://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google.list' && \
 	apt-get update && \
-	apt-get -y install google-chrome-stable vim less psmisc zip unzip net-tools libdbus-glib-1-2 gosu && \
+	apt-get -y install google-chrome-stable vim less psmisc zip unzip net-tools libdbus-glib-1-2 gosu python3 gcc make && \
 	apt-get -y dist-upgrade && \
 	apt-get clean && \
 	rm -rf /var/cache/apt && \
