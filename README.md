@@ -3,7 +3,8 @@
 ## Tags
 
 * node10
-* latest -> to whatever is latest node LTS, which is currently node10
+* node12
+* latest -> to whatever is current node version, which is currently node13
 * node8: discontinued - won't be updated
 
 ## The image contains tooling for:

@@ -1,6 +1,6 @@
 FROM node:12.13.0-buster-slim
 LABEL maintainer "David J. M. Karlsen <david@davidkarlsen.com>"
-ENV ANGULAR_CLI_VERSION=8.3.13 OWASP_DEPENDENCY_CHECK_VERSION=5.2.2 SONAR_CLI_VERSION=4.2.0.1873 YARN_VERSION=1.19.1
+ENV OWASP_DEPENDENCY_CHECK_VERSION=5.2.2 SONAR_CLI_VERSION=4.2.0.1873 YARN_VERSION=1.19.1
 # latest is broken: https://github.com/karma-runner/karma-firefox-launcher/issues/104
 # ENV FFOX_DOWNLOAD_URL=https://download.mozilla.org/?product=firefox-latest-ssl&os=linux64
 ENV FFOX_DOWNLOAD_URL=https://ftp.mozilla.org/pub/firefox/releases/67.0.4/linux-x86_64/en-US/firefox-67.0.4.tar.bz2
@@ -16,8 +16,7 @@ RUN wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | apt-key
 	ln -s /opt/google/chrome/chrome /usr/local/bin/chrome && \
 	wget -q -O - "${FFOX_DOWNLOAD_URL}" |tar xjv -C /opt && \
 	ln -s /opt/firefox/firefox /usr/local/bin/firefox && \
-	yarn global add @angular/cli@${ANGULAR_CLI_VERSION} sonarqube-scanner@latest stylelint && \
-	ng config --global cli.packageManager yarn && \
+	yarn global add sonarqube-scanner@latest stylelint && \
 	wget https://dl.bintray.com/jeremy-long/owasp/dependency-check-${OWASP_DEPENDENCY_CHECK_VERSION}-release.zip -O /tmp/owasp-dep-check.zip && \
 	unzip /tmp/owasp-dep-check.zip -d /usr/local && \
 	rm /tmp/owasp-dep-check.zip && \
