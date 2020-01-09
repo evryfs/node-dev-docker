@@ -1,4 +1,4 @@
-FROM node:12.13.0-buster-slim
+FROM node:12.14.1-buster-slim
 LABEL maintainer "David J. M. Karlsen <david@davidkarlsen.com>"
 ENV OWASP_DEPENDENCY_CHECK_VERSION=5.2.4 SONAR_CLI_VERSION=4.2.0.1873 YARN_VERSION=1.21.1
 # latest is broken: https://github.com/karma-runner/karma-firefox-launcher/issues/104
