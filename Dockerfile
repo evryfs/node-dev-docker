@@ -1,4 +1,5 @@
 FROM node:10.18.0-buster
+LABEL maintainer "David J. M. Karlsen <david@davidkarlsen.com>"
 ENV OWASP_DEPENDENCY_CHECK_VERSION=5.3.0 SONAR_CLI_VERSION=4.2.0.1873 YARN_VERSION=1.21.1
 # latest is broken: https://github.com/karma-runner/karma-firefox-launcher/issues/104
 # ENV FFOX_DOWNLOAD_URL=https://download.mozilla.org/?product=firefox-latest-ssl&os=linux64
