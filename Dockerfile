@@ -30,13 +30,7 @@ RUN wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | apt-key
 	git config --global user.name "Jenkins" && \
 	git config --global user.email "fsjenkins@evry.com"
 
-ENV 	HTTP_PROXY=http://proxy.evry.com:8080 \
-	http_proxy=http://proxy.evry.com:8080 \
-	HTTPS_PROXY=http://proxy.evry.com:8080 \
-	https_proxy=http://proxy.evry.com:8080 \
-	NO_PROXY=localhost,.evry.com,.finods.com,.localdomain,.cosng.net,127.0.0.1 \
-	no_proxy=localhost,.evry.com,.finods.com,.localdomain,.cosng.net,127.0.0.1 \
-	NPM_REGISTRY=https://fsnexus.evry.com/nexus/repository/npm-all/ \
+ENV 	NPM_REGISTRY=https://fsnexus.evry.com/nexus/repository/npm-all/ \
 	CHROME_BIN=/usr/bin/google-chrome \
 	NPM_CONFIG_PREFIX=/home/node/.npm-global \
 	PATH="/opt/firefox:/usr/local/dependency-check/bin:/home/node/.sonar/native-sonar-scanner/sonar-scanner-${SONAR_CLI_VERSION}-linux/jre/bin:${PATH}" \
