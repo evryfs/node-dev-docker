@@ -1,9 +1,8 @@
 FROM node:12.14.1-buster
 LABEL maintainer "David J. M. Karlsen <david@davidkarlsen.com>"
 ENV OWASP_DEPENDENCY_CHECK_VERSION=5.3.0 SONAR_CLI_VERSION=4.2.0.1873 YARN_VERSION=1.21.1
-# latest is broken: https://github.com/karma-runner/karma-firefox-launcher/issues/104
-# ENV FFOX_DOWNLOAD_URL=https://download.mozilla.org/?product=firefox-latest-ssl&os=linux64
-ENV FFOX_DOWNLOAD_URL=https://ftp.mozilla.org/pub/firefox/releases/67.0.4/linux-x86_64/en-US/firefox-67.0.4.tar.bz2
+# ENV FFOX_DOWNLOAD_URL=https://ftp.mozilla.org/pub/firefox/releases/67.0.4/linux-x86_64/en-US/firefox-67.0.4.tar.bz2
+ENV FFOX_DOWNLOAD_URL=https://download.mozilla.org/?product=firefox-latest-ssl&os=linux64
 
 RUN wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | apt-key add - && \
 	apt-get update && apt-get -y install apt-transport-https git && \
