@@ -8,7 +8,7 @@ RUN wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | apt-key
 	apt-get update && apt-get -y install apt-transport-https git && \
 	sh -c 'echo "deb [arch=amd64] https://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google.list' && \
 	apt-get update && \
-	apt-get -y install google-chrome-stable vim less psmisc zip unzip net-tools libdbus-glib-1-2 gosu wget && \
+	apt-get -y install google-chrome-stable vim less psmisc zip unzip net-tools libdbus-glib-1-2 gosu wget procps && \
 	apt-get -y dist-upgrade && \
 	apt-get clean && \
 	rm -rf /var/cache/apt && \
