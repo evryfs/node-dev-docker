@@ -14,9 +14,6 @@ RUN apt-get update && apt-get -y --no-install-recommends install wget apt-transp
 	wget -q -O - "${FFOX_DOWNLOAD_URL}" |tar xjv -C /opt && \
 	ln -s /opt/firefox/firefox /usr/local/bin/firefox && \
 	yarn global add sonarqube-scanner@latest stylelint && \
-	wget https://dl.bintray.com/jeremy-long/owasp/dependency-check-${OWASP_DEPENDENCY_CHECK_VERSION}-release.zip -O /tmp/owasp-dep-check.zip && \
-	unzip /tmp/owasp-dep-check.zip -d /usr/local && \
-	rm /tmp/owasp-dep-check.zip && \
 	wget https://binaries.sonarsource.com/Distribution/sonar-scanner-cli/sonar-scanner-cli-${SONAR_CLI_VERSION}-linux.zip -O /tmp/sonar.zip && \
 	mkdir -p /home/node/.sonar/native-sonar-scanner && \
 	unzip /tmp/sonar.zip -d /home/node/.sonar/native-sonar-scanner && \
