@@ -27,17 +27,15 @@ RUN apt-get update && apt-get -y --no-install-recommends install wget apt-transp
 ENV 	NPM_REGISTRY=https://fsnexus.evry.com/nexus/repository/npm-all/ \
 	CHROME_BIN=/usr/bin/google-chrome \
 	NPM_CONFIG_PREFIX=/home/node/.npm-global \
-	PATH="/opt/firefox:/usr/local/dependency-check/bin:/home/node/.sonar/native-sonar-scanner/sonar-scanner-${SONAR_CLI_VERSION}-linux/jre/bin:${PATH}" \
+	PATH="/opt/firefox:/home/node/.sonar/native-sonar-scanner/sonar-scanner-${SONAR_CLI_VERSION}-linux/jre/bin:${PATH}" \
 	GOSU_USER="0:0" \
-	GOSU_CHOWN="/home/node /usr/local/dependency-check/data" \
+	GOSU_CHOWN="/home/node" \
 	PUPPETEER_SKIP_CHROMIUM_DOWNLOAD=true \
 	JAVA_HOME=/home/node/.sonar/native-sonar-scanner/sonar-scanner-${SONAR_CLI_VERSION}-linux/jre
 
-RUN	/usr/local/dependency-check/bin/dependency-check.sh --updateonly && \
-	npm set registry ${NPM_REGISTRY} && \
+RUN	npm set registry ${NPM_REGISTRY} && \
 	yarn config set registry ${NPM_REGISTRY} && \
-	chown -R node:node /home/node /usr/local/dependency-check/data && \
-	chmod -R a+w /usr/local/dependency-check/data
+	chown -R node:node /home/node
 
 COPY gosu-entrypoint.sh showversions.sh /
 RUN chmod +x /gosu-entrypoint.sh
