@@ -4,7 +4,7 @@ ENV OWASP_DEPENDENCY_CHECK_VERSION=5.3.0 SONAR_CLI_VERSION=4.2.0.1873 YARN_VERSI
 # ENV FFOX_DOWNLOAD_URL=https://ftp.mozilla.org/pub/firefox/releases/67.0.4/linux-x86_64/en-US/firefox-67.0.4.tar.bz2
 ENV FFOX_DOWNLOAD_URL=https://download.mozilla.org/?product=firefox-latest-ssl&os=linux64
 
-RUN apt-get update && apt-get -y install wget apt-transport-https git && wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | apt-key add - && \
+RUN apt-get update && apt-get -y install wget apt-transport-https git gnupg && wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | apt-key add - && \
 	sh -c 'echo "deb [arch=amd64] https://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google.list' && \
 	apt-get update && \
 	apt-get -y install google-chrome-stable vim less psmisc zip unzip net-tools libdbus-glib-1-2 gosu procps && \
