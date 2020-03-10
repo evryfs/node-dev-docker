@@ -1,6 +1,6 @@
 FROM node:13.10.1-buster
 LABEL maintainer "David J. M. Karlsen <david@davidkarlsen.com>"
-ENV SONAR_CLI_VERSION=4.3.0.2102 YARN_VERSION=1.22.1
+ENV SONAR_CLI_VERSION=4.3.0.2102 YARN_VERSION=1.22.4
 # ENV FFOX_DOWNLOAD_URL=https://ftp.mozilla.org/pub/firefox/releases/67.0.4/linux-x86_64/en-US/firefox-67.0.4.tar.bz2
 ENV FFOX_DOWNLOAD_URL=https://download.mozilla.org/?product=firefox-latest-ssl&os=linux64
 
