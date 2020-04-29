@@ -2,9 +2,9 @@ version: 1
 update_configs:
   - package_manager: "docker"
     directory: "/"
+    target_branch: node14
     update_schedule: "daily"
     automerged_updates:
     - match:
         dependency_type: "all"
         update_type: "semver:patch"
-
