@@ -2,10 +2,9 @@ version: 1
 update_configs:
   - package_manager: "docker"
     directory: "/"
+    target_branch: node10
     update_schedule: "daily"
-    target_branch: "node10"
     automerged_updates:
     - match:
         dependency_type: "all"
         update_type: "semver:patch"
-
