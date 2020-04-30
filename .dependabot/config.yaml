@@ -2,6 +2,7 @@ version: 1
 update_configs:
   - package_manager: "docker"
     directory: "/"
+    target_branch: master
     update_schedule: "daily"
     automerged_updates:
     - match:
