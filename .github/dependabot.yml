@@ -4,13 +4,11 @@ updates:
   directory: "/"
   schedule:
     interval: daily
-  open-pull-requests-limit: 10
   target-branch: node14
 - package-ecosystem: docker
   directory: "/"
   schedule:
     interval: daily
-  open-pull-requests-limit: 10
   target-branch: node12
   ignore:
   - dependency-name: node
@@ -25,12 +23,10 @@ updates:
   directory: "/"
   schedule:
     interval: daily
-  open-pull-requests-limit: 10
 - package-ecosystem: docker
   directory: "/"
   schedule:
     interval: daily
-  open-pull-requests-limit: 10
   target-branch: node10
   ignore:
   - dependency-name: node
