@@ -14,11 +14,6 @@ updates:
   - dependency-name: node
     versions:
     - ">= 13.a"
-    - "< 14"
-  - dependency-name: node
-    versions:
-    - ">= 14.a"
-    - "< 15"
 - package-ecosystem: docker
   directory: "/"
   schedule:
@@ -32,12 +27,3 @@ updates:
   - dependency-name: node
     versions:
     - ">= 12.a"
-    - "< 13"
-  - dependency-name: node
-    versions:
-    - ">= 13.a"
-    - "< 14"
-  - dependency-name: node
-    versions:
-    - ">= 14.a"
-    - "< 15"
