@@ -1,0 +1,29 @@
+version: 2
+updates:
+- package-ecosystem: docker
+  directory: "/"
+  schedule:
+    interval: daily
+  target-branch: node14
+- package-ecosystem: docker
+  directory: "/"
+  schedule:
+    interval: daily
+  target-branch: node12
+  ignore:
+  - dependency-name: node
+    versions:
+    - ">= 13.a"
+- package-ecosystem: docker
+  directory: "/"
+  schedule:
+    interval: daily
+- package-ecosystem: docker
+  directory: "/"
+  schedule:
+    interval: daily
+  target-branch: node10
+  ignore:
+  - dependency-name: node
+    versions:
+    - ">= 12.a"
