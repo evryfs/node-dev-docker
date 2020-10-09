@@ -2,9 +2,10 @@
 
 ## Tags
 
-* node10
+* node14
 * node12
-* latest -> to whatever is current node version, which is currently node13
+
+* node10: retired
 * node8: discontinued - won't be updated
 
 ## The image contains tooling for:
