@@ -7,7 +7,7 @@ ENV FFOX_DOWNLOAD_URL=https://download.mozilla.org/?product=firefox-latest-ssl&o
 RUN apt-get update && apt-get -y --no-install-recommends install wget apt-transport-https git gnupg vim less psmisc zip unzip net-tools libdbus-glib-1-2 gosu procps bzip2 ca-certificates && wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | apt-key add - && \
 	sh -c 'echo "deb [arch=amd64] https://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google.list' && \
 	apt-get update && \
-	apt-get -y --no-install-recommends install google-chrome-stable && \
+	apt-get -y --no-install-recommends install google-chrome-stable libx11-xcb1 && \
 	apt-get clean && \
 	rm -rf /var/cache/apt && \
 	ln -s /opt/google/chrome/chrome /usr/local/bin/chrome && \
