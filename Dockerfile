@@ -24,7 +24,7 @@ RUN apt-get update && apt-get -y --no-install-recommends install wget apt-transp
 	git config --global user.name "Jenkins" && \
 	git config --global user.email "fsjenkins@evry.com"
 
-ENV 	NPM_REGISTRY=https://fsnexus.evry.com/nexus/repository/npm-all/ \
+ENV 	NPM_REGISTRY=https://nexus.finods.com/nexus/repository/npm-all/ \
 	CHROME_BIN=/usr/bin/google-chrome \
 	NPM_CONFIG_PREFIX=/home/node/.npm-global \
 	PATH="/opt/firefox:/home/node/.sonar/native-sonar-scanner/sonar-scanner-${SONAR_CLI_VERSION}-linux/jre/bin:${PATH}" \
