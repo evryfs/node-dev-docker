@@ -37,7 +37,6 @@ RUN	npm set registry ${NPM_REGISTRY} && \
 	yarn config set registry ${NPM_REGISTRY} && \
 	chown -R node:node /home/node
 
-COPY gosu-entrypoint.sh showversions.sh /
 RUN chmod +x /gosu-entrypoint.sh
 
 ENTRYPOINT ["/gosu-entrypoint.sh"]
