@@ -3,7 +3,6 @@
 # node-dev-docker
 
 ## The image contains tooling for:
-* ng
 * [npm](https://www.npmjs.com/get-npm)
 * [yarn](https://yarnpkg.com)
 * headless [karma](https://karma-runner.github.io/2.0/index.html) browser-testing in Chrome and Firefox
