@@ -2,11 +2,21 @@
 
 # node-dev-docker
 
-## The image contains tooling for:
+## Tags
+
+* node14
+* node12
+
+* node10: retired
+* node8: discontinued - won't be updated
+
+## The image contains tooling and libs for:
+* ng
 * [npm](https://www.npmjs.com/get-npm)
 * [yarn](https://yarnpkg.com)
 * headless [karma](https://karma-runner.github.io/2.0/index.html) browser-testing in Chrome and Firefox
 * [sonar-scanner](https://docs.sonarqube.org/display/SCAN/Analyzing+with+SonarQube+Scanner)
+* [Cypress](https://docs.cypress.io/)
 
 which makes it ideal for being the build-environment in CI/Jenkins.
 
