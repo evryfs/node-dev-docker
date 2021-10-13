@@ -1,4 +1,4 @@
-FROM node:12.22.6-buster
+FROM node:12.22.7-buster
 LABEL maintainer "David J. M. Karlsen <david@davidkarlsen.com>"
 ENV SONAR_CLI_VERSION=4.6.2.2472 YARN_VERSION=1.22.15
 # ENV FFOX_DOWNLOAD_URL=https://ftp.mozilla.org/pub/firefox/releases/67.0.4/linux-x86_64/en-US/firefox-67.0.4.tar.bz2
