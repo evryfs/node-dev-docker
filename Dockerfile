@@ -1,7 +1,6 @@
 FROM node:14.18.1-buster
 LABEL maintainer "David J. M. Karlsen <david@davidkarlsen.com>"
 ENV SONAR_CLI_VERSION=4.6.2.2472 YARN_VERSION=1.22.17
-# ENV FFOX_DOWNLOAD_URL=https://ftp.mozilla.org/pub/firefox/releases/67.0.4/linux-x86_64/en-US/firefox-67.0.4.tar.bz2
 ENV FFOX_DOWNLOAD_URL=https://download.mozilla.org/?product=firefox-latest-ssl&os=linux64
 
 RUN apt-get update && apt-get -y --no-install-recommends install wget apt-transport-https git gnupg vim less psmisc zip unzip net-tools libdbus-glib-1-2 gosu procps bzip2 ca-certificates libgtk2.0-0 libgtk-3-0 libgbm-dev libnotify-dev libgconf-2-4 libnss3 libxss1 libasound2 libxtst6 xauth xvfb && wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | apt-key add - && \
@@ -37,7 +36,5 @@ RUN	npm set registry ${NPM_REGISTRY} && \
 	yarn config set registry ${NPM_REGISTRY} && \
 	chown -R node:node /home/node
 
-COPY gosu-entrypoint.sh showversions.sh /
-RUN chmod +x /gosu-entrypoint.sh
-
+COPY --chmod=a+x gosu-entrypoint.sh /
 ENTRYPOINT ["/gosu-entrypoint.sh"]
