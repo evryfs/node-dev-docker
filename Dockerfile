@@ -1,6 +1,6 @@
 FROM node:14.19.0-bullseye
 LABEL maintainer "David J. M. Karlsen <david@davidkarlsen.com>"
-ENV SONAR_CLI_VERSION=4.6.2.2472 YARN_VERSION=1.22.17
+ENV SONAR_CLI_VERSION=4.6.2.2472 YARN_VERSION=1.22.18
 ENV FFOX_DOWNLOAD_URL=https://download.mozilla.org/?product=firefox-latest-ssl&os=linux64
 
 RUN apt-get update && apt-get -y --no-install-recommends install wget apt-transport-https git gnupg vim less psmisc zip unzip net-tools libdbus-glib-1-2 gosu procps bzip2 ca-certificates libgtk2.0-0 libgtk-3-0 libgbm-dev libnotify-dev libgconf-2-4 libnss3 libxss1 libasound2 libxtst6 xauth xvfb && wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | apt-key add - && \
