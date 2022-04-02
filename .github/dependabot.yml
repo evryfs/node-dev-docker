@@ -1,5 +1,9 @@
 version: 2
 updates:
+- package-ecosystem: github-actions
+  directory: "/"
+  schedule:
+    interval: daily
 - package-ecosystem: docker
   directory: "/"
   schedule:
@@ -18,15 +22,6 @@ updates:
   - dependency-name: node
     versions:
     - ">= 15"
-- package-ecosystem: docker
-  directory: "/"
-  schedule:
-    interval: daily
-  target-branch: node12
-  ignore:
-  - dependency-name: node
-    versions:
-    - ">= 13.a"
 - package-ecosystem: docker
   directory: "/"
   schedule:
