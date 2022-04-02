@@ -14,8 +14,6 @@ if [ -n "$GOSU_CHOWN" ]; then
     done
 fi  
 
-[ -n "$SHOW_VERSIONS" ] && /showversions.sh
-
 # If GOSU_USER environment variable set to something other than 0:0 (root:root),
 # become user:group set within and exec command passed in args
 if [ "$GOSU_USER" != "0:0" ]; then

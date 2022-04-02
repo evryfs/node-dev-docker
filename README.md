@@ -1,17 +1,20 @@
-[![Docker Repository on Quay](https://quay.io/repository/evryfs/node-dev-docker/status "Docker Repository on Quay")](https://quay.io/repository/evryfs/node-dev-docker)
+[![build](https://github.com/evryfs/node-dev-docker/actions/workflows/build.yaml/badge.svg)](https://github.com/evryfs/node-dev-docker/actions/workflows/build.yaml)
 
 # node-dev-docker
 
-## Tags
+## Tags / versions
 
-* node14
-* node12
+See branches for actively maintained versions.
 
+<<<<<<< HEAD
 * node10: retired
 * node8: discontinued - won't be updated
 
 ## The image contains tooling and libs for:
 * ng
+=======
+## The image contains tooling and libs for:
+>>>>>>> master
 * [npm](https://www.npmjs.com/get-npm)
 * [yarn](https://yarnpkg.com)
 * headless [karma](https://karma-runner.github.io/2.0/index.html) browser-testing in Chrome and Firefox
@@ -26,5 +29,3 @@ The source to build should be mounted in /app.
 Set GOSU_USER=<uid>:<gid> to the UID of the user running the image (typically Jenkins),
 this ensures that the "node" user will get this uid/gid, and chown node's home, /home/node
 which contains tooling - this again make files generated during the build to match the out-of-container ownership.
-
-
