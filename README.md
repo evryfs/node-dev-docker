@@ -6,15 +6,7 @@
 
 See branches for actively maintained versions.
 
-<<<<<<< HEAD
-* node10: retired
-* node8: discontinued - won't be updated
-
 ## The image contains tooling and libs for:
-* ng
-=======
-## The image contains tooling and libs for:
->>>>>>> master
 * [npm](https://www.npmjs.com/get-npm)
 * [yarn](https://yarnpkg.com)
 * headless [karma](https://karma-runner.github.io/2.0/index.html) browser-testing in Chrome and Firefox
