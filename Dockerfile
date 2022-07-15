@@ -1,4 +1,4 @@
-FROM node:18.5.0-bullseye
+FROM node:18.6.0-bullseye
 LABEL maintainer "David J. M. Karlsen <david@davidkarlsen.com>"
 ENV SONAR_CLI_VERSION=4.7.0.2747 YARN_VERSION=1.22.18
 ENV FFOX_DOWNLOAD_URL=https://download.mozilla.org/?product=firefox-latest-ssl&os=linux64
